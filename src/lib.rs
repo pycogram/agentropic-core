@@ -10,6 +10,7 @@ pub mod id;
 pub mod identity;
 pub mod lifecycle;
 pub mod result;
+pub mod lifecycle;
 
 // Declare prelude module
 pub mod prelude;
