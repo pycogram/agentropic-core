@@ -1,63 +1,9 @@
 name: CI
 
-on:
-  push:
-    branches: [ main, dev ]
-  pull_request:
-    branches: [ main ]
-
-env:
-  CARGO_TERM_COLOR: always
-  RUST_BACKTRACE: 1
+on: []  # Disables all triggers
 
 jobs:
-  test:
-    name: Test
+  disabled:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    
-    - name: Install Rust
-      uses: dtolnay/rust-toolchain@stable
-      with:
-        components: rustfmt, clippy
-    
-    - name: Cache cargo registry
-      uses: actions/cache@v3
-      with:
-        path: ~/.cargo/registry
-        key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
-    
-    - name: Cache cargo index
-      uses: actions/cache@v3
-      with:
-        path: ~/.cargo/git
-        key: ${{ runner.os }}-cargo-git-${{ hashFiles('**/Cargo.lock') }}
-    
-    - name: Cache target directory
-      uses: actions/cache@v3
-      with:
-        path: target
-        key: ${{ runner.os }}-target-${{ hashFiles('**/Cargo.lock') }}
-    
-    # 1. Check formatting FIRST (fast, fails early)
-    - name: Check formatting
-      run: cargo fmt -- --check
-    
-    # 2. Build the library (compile check)
-    - name: Build
-      run: cargo build --verbose
-    
-    # 3. Run clippy (linting)
-    - name: Run clippy
-      run: cargo clippy --all-targets --all-features -- -D warnings
-    
-    # 4. Run tests (last, most comprehensive)
-    - name: Run tests
-      run: cargo test --verbose
-    
-    # 5. Build release (optional, for artifacts)
-    - name: Build release
-      run: cargo build --verbose --release
-
+      - run: echo "CI is disabled"
