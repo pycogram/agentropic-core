@@ -1,6 +1,7 @@
 //! # agentropic-core
 //! Core primitives, traits, and abstractions for agent-oriented programming.
 
+
 // Declare all modules
 pub mod agent;
 pub mod context;
@@ -11,7 +12,7 @@ pub mod lifecycle;
 pub mod result;
 pub mod lifecycle;
 
-// Add prelude module
+// Declare prelude module
 pub mod prelude;
 
 // Re-export commonly used items at the crate root
