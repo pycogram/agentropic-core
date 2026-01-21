@@ -10,7 +10,7 @@
 
 ---
 
-## 🎯 Purpose
+## Purpose
 
 This crate establishes:
 
@@ -21,7 +21,7 @@ This crate establishes:
 
 ---
 
-## 🧩 Core Concepts
+## Core Concepts
 
 ### Agent Identity
 
@@ -80,7 +80,7 @@ The lifecycle is managed by the runtime (see `agentropic-runtime`).
 
 ---
 
-## 📦 What's Included
+## What's Included
 
 ### Core Types
 
@@ -109,7 +109,7 @@ The lifecycle is managed by the runtime (see `agentropic-runtime`).
 
 ---
 
-## 🚀 Usage
+## Usage
 
 Add to your `Cargo.toml`:
 ```toml
@@ -162,7 +162,7 @@ impl Agent for SimpleAgent {
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 `agentropic-core` is designed to be:
 
@@ -182,7 +182,7 @@ impl Agent for SimpleAgent {
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 Full API documentation is available on [docs.rs](https://docs.rs/agentropic-core).
 
@@ -190,13 +190,13 @@ For guides and tutorials, see [agentropic-docs](https://github.com/agentropic/ag
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please see the [contributing guidelines](../../CONTRIBUTING.md).
 
 ---
 
-## 📜 License
+## License
 
 Licensed under either of:
 
@@ -207,7 +207,7 @@ at your option.
 
 ---
 
-## 🌟 Status
+## Status
 
 **Active Development** - This crate is under active development. APIs may change before 1.0 release.
 
