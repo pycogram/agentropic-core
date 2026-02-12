@@ -18,6 +18,12 @@ impl Default for AgentId {
     }
 }
 
+impl From<Uuid> for AgentId {
+    fn from(uuid: Uuid) -> Self {
+        Self(uuid)
+    }
+}
+
 impl std::fmt::Display for AgentId {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "{}", self.0)

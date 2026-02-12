@@ -11,4 +11,13 @@ pub enum AgentError {
     
     #[error("Shutdown failed: {0}")]
     ShutdownFailed(String),
+
+    #[error("Communication failed: {0}")]
+    CommunicationFailed(String),
+
+    #[error("Timeout: {0}")]
+    Timeout(String),
+
+    #[error("Internal error: {0}")]
+    Internal(#[from] Box<dyn std::error::Error + Send + Sync>),
 }

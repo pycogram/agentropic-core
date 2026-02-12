@@ -1,6 +1,7 @@
+// Define a concrete agent for testing
+
 use agentropic_core::prelude::*;
 
-// Define a concrete agent for testing
 struct TestAgent {
     id: AgentId,
 }
@@ -13,7 +14,6 @@ impl TestAgent {
     }
 }
 
-// Implement the Agent trait for TestAgent
 #[async_trait]
 impl Agent for TestAgent {
     fn id(&self) -> &AgentId {
@@ -33,7 +33,6 @@ impl Agent for TestAgent {
     }
 }
 
-// Tests
 #[test]
 fn create_agent() {
     let agent = TestAgent::new();
@@ -50,8 +49,7 @@ fn agent_has_unique_id() {
 #[tokio::test]
 async fn test_agent_lifecycle() {
     let mut agent = TestAgent::new();
-    let ctx = AgentContext::new();
-
+    let ctx = AgentContext::new(*agent.id());
     assert!(agent.initialize(&ctx).await.is_ok());
     assert!(agent.execute(&ctx).await.is_ok());
     assert!(agent.shutdown(&ctx).await.is_ok());
